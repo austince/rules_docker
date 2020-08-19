@@ -19,6 +19,8 @@ DOCKER="%{docker_tool_path}"
 DOCKER_FLAGS="%{docker_flags}"
 DOCKER_RUN_FLAGS="--network=host"
 export DOCKER_HOST="tcp://docker:2376"
+export DOCKER_CERT_PATH="/certs/client"
+export DOCKER_TLS_VERIFY="1"
 
 if [[ -z "$DOCKER" ]]; then
     echo >&2 "error: docker not found; do you need to manually configure the docker toolchain?"
